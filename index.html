@@ -4,30 +4,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Ishita Kaur Sahni — MBA Tech Data Science student, researcher and aspiring sports analyst.">
+
   <title>Ishita Kaur Sahni | Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f8f7f4;
-      color: #292929;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 24px;
-      box-sizing: border-box;
-    }
-    h1 { font-size: clamp(2rem, 6vw, 4rem); }
-    p { color: #6485a3; line-height: 1.6; }
-  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
+
 <body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a href="#home" class="logo">IKS<span>.</span></a>
+
+      <button class="menu-toggle" type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#beyond">Beyond the Work</a>
+        <a href="#contact" class="nav-contact">Let's Connect ↗</a>
+      </div>
+    </nav>
+  </header>
+
   <main>
-    <h1>Ishita Kaur Sahni</h1>
-    <p>MBA Tech | Data Science | Cricket Enthusiast</p>
-    <p>Portfolio in progress.</p>
+    <section id="home" class="section hero">
+      <div class="container">
+        <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
+        <h1>Hi, I'm <em>Ishita.</em></h1>
+        <p class="hero-subtitle">
+          Data Science Student · Researcher · Aspiring Sports Analyst
+        </p>
+        <p class="hero-intro">
+          Exploring patterns, asking questions and finding the stories
+          hidden in data — with a special love for cricket.
+        </p>
+        <a href="#about" class="button">Get to know me <span>↗</span></a>
+      </div>
+    </section>
+
+    <section id="about" class="section section-alt">
+      <div class="container">
+        <p class="eyebrow">01 / THE PERSON</p>
+        <h2>About <em>Me.</em></h2>
+        <div class="section-placeholder">
+          <p>My story, my journey and what drives me.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <p class="eyebrow">02 / WHAT I'VE BUILT</p>
+        <h2>Selected <em>Projects.</em></h2>
+        <div class="section-placeholder">
+          <p>Research, applications and projects I've worked on.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <p class="eyebrow">03 / THE JOURNEY</p>
+        <h2>My <em>Experience.</em></h2>
+        <div class="section-placeholder">
+          <p>Experiences that have shaped the way I work.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <p class="eyebrow">04 / MY TOOLKIT</p>
+        <h2>Skills & <em>Learning.</em></h2>
+        <div class="section-placeholder">
+          <p>The technologies, tools and ideas I work with.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="beyond" class="section section-alt">
+      <div class="container">
+        <p class="eyebrow">05 / THE OTHER SIDE</p>
+        <h2>Beyond the <em>Work.</em></h2>
+        <div class="section-placeholder">
+          <p>Cricket, travel, music and the moments in between.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <p class="eyebrow">06 / SAY HELLO</p>
+        <h2>Let's <em>Connect.</em></h2>
+        <p>Have an idea, an opportunity or just want to talk cricket?</p>
+        <a class="button" href="mailto:ishitaksahni301006@gmail.com">
+          Say Hello <span>↗</span>
+        </a>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Ishita Kaur Sahni</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
 </body>
 </html>
