@@ -1027,3 +1027,377 @@ h1 em, h2 em {
     padding-left: 35px;
   }
 }
+
+
+/* ===================================
+   STAGE 5 — SKILLS, BEYOND & CONTACT
+=================================== */
+
+/* Skills */
+
+.skills-intro {
+  max-width: 650px;
+  margin: 18px 0 45px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.skill-group {
+  padding: 30px;
+  background: #fffdfa;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.skill-group-number {
+  color: var(--blue);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.skill-group h3 {
+  min-height: 55px;
+  margin: 15px 0 20px;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-items span {
+  padding: 7px 11px;
+  border: 1px solid #d7e1e8;
+  border-radius: 4px;
+  background: #eaf0f4;
+  color: var(--blue-dark);
+  font-size: 0.77rem;
+  font-weight: 600;
+}
+
+/* Certifications */
+
+.certifications-section {
+  margin-top: 105px;
+}
+
+.certifications-section h2 {
+  margin-bottom: 35px;
+}
+
+.certifications-list {
+  border-top: 1px solid var(--border);
+}
+
+.certification-item {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.certification-icon {
+  display: flex;
+  flex: 0 0 52px;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #e3ebf0;
+  color: var(--blue-dark);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.certification-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.certification-info h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.certification-info p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.87rem;
+  line-height: 1.6;
+}
+
+.certification-status {
+  flex-shrink: 0;
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--blue-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.certification-status.completed {
+  background: #e5ede8;
+  border-color: #d0e0d5;
+  color: #47745c;
+}
+
+.certification-status.in-progress {
+  background: #e7edf2;
+}
+
+/* Beyond the Work */
+
+.beyond-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 75px;
+  align-items: center;
+  margin-top: 35px;
+}
+
+.beyond-content > p {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.95;
+}
+
+.beyond-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 30px;
+}
+
+.beyond-interests span {
+  padding: 8px 13px;
+  border: 1px solid #cad6de;
+  border-radius: 3px;
+  color: var(--blue-dark);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.beyond-collage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-rows: 185px 210px;
+  gap: 14px;
+  padding-bottom: 45px;
+}
+
+.beyond-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  border-radius: 6px;
+  background: #cddae3;
+  color: var(--blue-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.beyond-photo-one {
+  grid-row: 1 / 3;
+  background: #b9cbd7;
+}
+
+.beyond-photo-two {
+  background: #d8e2e8;
+}
+
+.beyond-photo-three {
+  background: #c3d3dd;
+}
+
+.beyond-photo-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  color: var(--blue-dark);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+/* Contact */
+
+.contact-section {
+  text-align: center;
+}
+
+.contact-content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.contact-content h2 {
+  font-size: clamp(3rem, 7vw, 5.8rem);
+}
+
+.contact-intro {
+  max-width: 620px;
+  margin: 25px auto 15px;
+  color: var(--charcoal);
+  font-size: 1.1rem;
+  line-height: 1.9;
+}
+
+.contact-secondary {
+  max-width: 590px;
+  margin: 0 auto 35px;
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+.contact-email {
+  display: inline-block;
+  max-width: 100%;
+  padding-bottom: 7px;
+  border-bottom: 2px solid var(--blue);
+  color: var(--blue-dark);
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.7vw, 1.7rem);
+  overflow-wrap: anywhere;
+}
+
+.contact-email:hover {
+  color: var(--charcoal);
+}
+
+.contact-socials {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 35px;
+}
+
+.contact-socials a {
+  color: var(--charcoal);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.contact-socials a:hover {
+  color: var(--blue-dark);
+}
+
+/* Footer */
+
+.site-footer {
+  padding: 30px 0;
+  border-top: 1px solid var(--border);
+  background: var(--background);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+
+.footer-inner p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.back-to-top {
+  color: var(--blue-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .beyond-grid {
+    gap: 35px;
+  }
+}
+
+@media (max-width: 750px) {
+  .skills-grid,
+  .beyond-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-group h3 {
+    min-height: auto;
+  }
+
+  .certifications-section {
+    margin-top: 75px;
+  }
+
+  .beyond-collage {
+    max-width: 550px;
+    width: 100%;
+    margin: 15px auto 0;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .certification-item {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .certification-info {
+    flex-basis: calc(100% - 70px);
+  }
+
+  .certification-status {
+    margin-left: 66px;
+  }
+
+  .beyond-collage {
+    grid-template-rows: 150px 170px;
+    gap: 9px;
+  }
+
+  .beyond-photo {
+    padding: 10px;
+    font-size: 0.65rem;
+  }
+}
