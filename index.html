@@ -17,6 +17,58 @@
 </head>
 
 <body>
+    
+<!-- THE ISHITA ROUTE — SIDEBAR -->
+<div class="ishita-route" id="ishitaRoute" aria-hidden="true">
+    <div class="route-title">THE ISHITA ROUTE</div>
+
+    <div class="route-track">
+        <svg
+            class="route-svg"
+            id="routeSvg"
+            viewBox="0 0 100 700"
+            preserveAspectRatio="none"
+        >
+            <path
+                id="routePath"
+                d="M50 0 C12 80 88 140 50 220
+                   S12 370 50 450
+                   S88 600 50 700"
+                fill="none"
+                stroke="#b9cbd7"
+                stroke-width="3"
+                stroke-dasharray="5 9"
+                stroke-linecap="round"
+            />
+
+            <path
+                id="routeProgress"
+                d="M50 0 C12 80 88 140 50 220
+                   S12 370 50 450
+                   S88 600 50 700"
+                fill="none"
+                stroke="#748da3"
+                stroke-width="3.5"
+                stroke-linecap="round"
+            />
+        </svg>
+
+        <div class="route-scooter" id="routeScooter">
+            <img
+                src="assets/images/personal/vespa.png"
+                alt=""
+                draggable="false"
+            >
+        </div>
+    </div>
+
+    <div class="route-label" id="routeLabel">
+        STOP 01 / HOME
+    </div>
+</div>
+<!-- END ISHITA ROUTE -->
+
+  
   <header class="site-header">
     <nav class="navbar container" aria-label="Main navigation">
       <a href="#home" class="logo">IKS<span>.</span></a>
@@ -74,6 +126,8 @@
             at the beach to clear my mind.
         </p>
 
+        <div class="ishita-ticker" aria-label="My interests"><span>🏏 CRICKET FIRST</span><span>✦ DATA NERD</span><span>♫ ALWAYS ON AUX</span><span>↗ CHASING THE NEXT ADVENTURE</span></div>
+
         <div class="hero-actions">
             <a href="#projects" class="button">
             Explore my work <span>↗</span>
@@ -118,6 +172,7 @@
     <div class="container">
 
         <p class="eyebrow">01 / THE PERSON BEHIND THE WORK</p>
+        <div class="chapter-stamp stamp-green">THE PAVILION / EST. AGE 2 🏏</div>
 
         <div class="about-grid">
 
@@ -143,6 +198,8 @@
 
         <!-- RIGHT: ABOUT ME -->
         <div class="about-content">
+            <button class="fun-fact-toggle" type="button" aria-expanded="false" aria-controls="ishitaFact">✳ OPEN THE CRICKET FILE ↗</button>
+            <p class="fun-fact-answer" id="ishitaFact" hidden>18 forever. Six years of competitive cricket. The dream now? See the game through data.</p>
 
             <h2>A little more <em>about me.</em></h2>
 
@@ -155,7 +212,7 @@
             the actual game is played off it.
             </p>
             
-            <p>push 
+            <p>
             And of course, there's Virat Kohli. Beyond his batting,
             it's his passion, intensity, discipline and never-give-up
             attitude that I admire the most. Watching him has only
@@ -205,6 +262,7 @@
 
             <p class="eyebrow">02 / SELECTED WORK</p>
             <h2>Projects &amp; <em>explorations.</em></h2>
+            <div class="chapter-stamp stamp-orange">BUILT WITH CURIOSITY ⚡</div>
             <p class="projects-intro">
                 From cricket analytics to computational research, these projects
                 reflect my interest in using technology to explore questions,
@@ -905,6 +963,7 @@
 
         <p class="eyebrow">05 / THE PERSON BEHIND THE PROJECTS</p>
         <h2>Beyond <em>the Work.</em></h2>
+        <div class="chapter-stamp stamp-yellow">OFF THE CLOCK / ON THE ROAD ↗</div>
 
         <div class="beyond-grid">
 
@@ -1042,6 +1101,7 @@
 
                 <div class="contact-intro">
                     <h2>Let's <em>connect.</em></h2>
+                    <div class="chapter-stamp stamp-orange">GOOD CONVERSATIONS START HERE ✳</div>
 
                     <p>
                         Whether it's a conversation about data science,

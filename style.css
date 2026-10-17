@@ -2416,3 +2416,319 @@ h1 em, h2 em {
         text-align: left;
     }
 }
+
+
+/* ====================================
+   THE ISHITA ROUTE
+   ==================================== */
+
+.journey-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.journey-road {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.journey-path {
+    fill: none;
+    stroke: #b8c9d5;
+    stroke-width: 2.5;
+    stroke-dasharray: 4 11;
+    stroke-linecap: round;
+    opacity: 0.65;
+}
+
+.journey-progress {
+    fill: none;
+    stroke: #748da3;
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
+.journey-vespa {
+    position: absolute;
+    width: 82px;
+    height: 82px;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    filter: drop-shadow(0 5px 5px rgba(41,45,50,0.18));
+    will-change: left, top;
+}
+
+.journey-vespa img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Keep the route behind readable content */
+.container {
+    position: relative;
+    z-index: 3;
+}
+
+/* Small-screen treatment */
+@media (max-width: 768px) {
+    .journey-layer {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .journey-vespa {
+        will-change: auto;
+    }
+}
+
+
+/* =========================================
+   ISHITA ROUTE — LAYERING AND MOVEMENT
+   ========================================= */
+
+.journey-layer {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.journey-road {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.journey-vespa {
+    position: absolute;
+    width: 76px;
+    height: 76px;
+    z-index: 1;
+    transform: translate3d(-50%, -50%, 0);
+    transition: none !important;
+    will-change: left, top;
+}
+
+.journey-vespa img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Content and images appear in front of the route */
+.section {
+    position: relative;
+    z-index: 2;
+}
+
+/* No accidental animation delay */
+.journey-vespa,
+.journey-road,
+.journey-progress {
+    animation: none !important;
+    transition: none !important;
+}
+
+@media (max-width: 768px) {
+    .journey-layer {
+        display: none;
+    }
+}
+
+
+/* ======================================
+   THE ISHITA ROUTE — FIXED SIDEBAR
+   ====================================== */
+
+.ishita-route {
+    position: fixed;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    width: 100px;
+    height: min(75vh, 600px);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+}
+
+.route-title {
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #748da3;
+    margin-bottom: 12px;
+    white-space: nowrap;
+}
+
+.route-track {
+    position: relative;
+    width: 72px;
+    flex: 1;
+    min-height: 0;
+}
+
+.route-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+}
+
+.route-scooter {
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 4px 5px rgba(41, 45, 50, 0.2));
+    will-change: left, top;
+}
+
+.route-scooter img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.route-label {
+    margin-top: 12px;
+    color: #748da3;
+    font-size: 0.56rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Smaller screens */
+@media (max-width: 1100px) {
+    .ishita-route {
+        right: 2px;
+        width: 76px;
+    }
+
+    .route-track {
+        width: 55px;
+    }
+
+    .route-scooter {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+/* Hide on phones to avoid covering content */
+@media (max-width: 768px) {
+    .ishita-route {
+        display: none;
+    }
+}
+.route-scooter {
+    transition: none !important;
+}
+
+/* ========================================================
+   THE ISHITA-VERSE — SPORTY / COLOURFUL / NOT TOO GIRLY
+   Added as a reversible makeover layer.
+   ======================================================== */
+:root {
+  --background: #fff9ee;
+  --background-alt: #edf4e9;
+  --blue: #2657b8;
+  --blue-dark: #173e85;
+  --charcoal: #22292a;
+  --muted: #4e5959;
+  --border: #cdd7cf;
+  --ishita-orange: #e56b37;
+  --ishita-yellow: #f5cc49;
+  --ishita-green: #276c50;
+  --ishita-lilac: #c4c1ee;
+}
+body { background: var(--background); }
+.site-header { background: rgba(255,249,238,.97); border-bottom: 2px solid var(--charcoal); }
+.logo { font-family: var(--font-body); font-weight: 800; letter-spacing: -.07em; }
+.logo span { color: var(--ishita-orange); }
+.nav-contact { background: var(--ishita-yellow); color: var(--charcoal) !important; padding: 9px 14px; border: 1.5px solid var(--charcoal); border-radius: 50px; }
+.nav-contact:hover { background: var(--ishita-orange); }
+.hero { background: radial-gradient(circle at 87% 18%, #ffe7a1 0, transparent 30%), radial-gradient(circle at 2% 92%, #dbe8ff 0, transparent 33%), var(--background); }
+.hero-content h1 { font-weight: 600; letter-spacing: -.055em; }
+.hero-content h1 em { color: var(--ishita-orange); }
+.hero .eyebrow { display: inline-block; background: var(--ishita-yellow); padding: 5px 13px; border: 1.5px solid var(--charcoal); transform: rotate(-1.5deg); color: var(--charcoal); }
+.hero-photo { border: 5px solid var(--charcoal); box-shadow: 13px 13px 0 var(--ishita-yellow); }
+.hero-photo-small { border-color: var(--background); box-shadow: -8px 8px 0 var(--ishita-orange); }
+.hero-note { background: var(--ishita-yellow); color: var(--charcoal); padding: 9px 12px; border: 1px solid var(--charcoal); border-radius: 4px; transform: rotate(-3deg); font-weight: 700; max-width: 230px; line-height: 1.4; }
+.button { background: var(--blue); border: 2px solid var(--charcoal); border-radius: 40px; box-shadow: 4px 4px 0 var(--charcoal); }
+.button:hover { background: var(--ishita-orange); box-shadow: 2px 2px 0 var(--charcoal); }
+.ishita-ticker { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
+.ishita-ticker span { padding: 5px 9px; border: 1.5px solid var(--charcoal); border-radius: 3px; font-size: .66rem; font-weight: 800; letter-spacing: .06em; background: #dfe8fb; transform: rotate(-1deg); }
+.ishita-ticker span:nth-child(2) { background: #d6ead9; transform: rotate(2deg); }
+.ishita-ticker span:nth-child(3) { background: #fbe29b; transform: rotate(-2deg); }
+.ishita-ticker span:nth-child(4) { background: #f8c9a8; transform: rotate(1deg); }
+.section-alt { background: var(--background-alt); }
+#about { background: #e7f0df; }
+#projects { background: #fff9ee; }
+#other-projects { background: #e9eafa; }
+#experience { background: #fcebdc; }
+#skills { background: #fff9ee; }
+#beyond { background: #dbe9f7; }
+#contact { background: #f6d56e; }
+.section h2 em { color: var(--blue); }
+#about h2 em, #beyond h2 em { color: var(--ishita-green); }
+#experience h2 em, #contact h2 em { color: #9e3e22; }
+.chapter-stamp { display: inline-block; width: fit-content; padding: 7px 12px; margin: -12px 0 24px; font-size: .7rem; font-weight: 800; letter-spacing: .09em; border: 2px solid var(--charcoal); border-radius: 3px; box-shadow: 3px 3px 0 var(--charcoal); transform: rotate(-2deg); }
+.stamp-green { background: #b1d6ac; }
+.stamp-orange { background: #f5a774; }
+.stamp-yellow { background: var(--ishita-yellow); }
+.about-photo { border: 4px solid var(--charcoal); box-shadow: -11px 11px 0 #e8bd60; }
+.fun-fact-toggle { display: inline-block; margin: 0 0 20px; padding: 10px 16px; border: 2px solid var(--charcoal); border-radius: 4px; background: var(--ishita-yellow); color: var(--charcoal); font: 800 .78rem var(--font-body); cursor: pointer; box-shadow: 3px 3px 0 var(--charcoal); }
+.fun-fact-toggle:hover { background: #ffd967; transform: translateY(-2px); }
+.fun-fact-answer:not([hidden]) { background: #fff9e5; padding: 15px 18px; border-left: 5px solid var(--ishita-orange); border-radius: 5px; }
+.featured-project { border-bottom: 2px dashed #9fa8a3; }
+.featured-project-image { border: 2px solid var(--charcoal); border-radius: 10px; box-shadow: 8px 8px 0 #b9c9ef; transition: transform .2s, box-shadow .2s; }
+.featured-project:nth-of-type(3n+2) .featured-project-image { box-shadow: 8px 8px 0 #f6bf8f; }
+.featured-project:nth-of-type(3n+3) .featured-project-image { box-shadow: 8px 8px 0 #b5d7a6; }
+.featured-project:hover .featured-project-image { transform: translate(-2px,-3px); box-shadow: 11px 11px 0 #f2cc49; }
+.project-tags span, .other-project-tags span { background: #dbe7fb; border: 1px solid #aac3e8; border-radius: 20px; color: #173e85; }
+.project-tags span:nth-child(3n+2), .other-project-tags span:nth-child(3n+2) { background: #f8dfac; border-color: #e5c680; color: #59451e; }
+.project-tags span:nth-child(3n+3), .other-project-tags span:nth-child(3n+3) { background: #d6ebd5; border-color: #a4cfa6; color: #28533b; }
+.other-project-card { border: 2px solid var(--charcoal); background: #fffdf8; border-radius: 8px; box-shadow: 5px 5px 0 #c4c1ee; }
+.other-project-card:nth-child(2) { box-shadow: 5px 5px 0 #eab083; }
+.other-project-card:nth-child(3) { box-shadow: 5px 5px 0 #b0d4a9; }
+.other-project-card:nth-child(4) { box-shadow: 5px 5px 0 #f1d45f; }
+.other-project-card:hover { transform: translate(-2px,-4px); border-color: var(--charcoal); }
+.skill-category { background: #fffefa; border: 2px solid var(--charcoal); box-shadow: 5px 5px 0 #b8d3e5; }
+.skill-category:nth-child(2n) { box-shadow: 5px 5px 0 #c6dba7; }
+.skill-category:nth-child(3n) { box-shadow: 5px 5px 0 #f3c08e; }
+.gallery-item { border: 2px solid var(--charcoal); background: #fffdf6; box-shadow: 5px 5px 0 #f5cc49; }
+.gallery-item:nth-child(3n+2) { box-shadow: 5px 5px 0 #9ac1aa; }
+.gallery-item:nth-child(3n+3) { box-shadow: 5px 5px 0 #f0a976; }
+.beyond-interests span { border: 1px solid var(--charcoal); }
+.contact-link { border-bottom: 2px solid rgba(34,41,42,.45); }
+.contact-link:first-child { border-top: 2px solid rgba(34,41,42,.45); }
+.site-footer { background: var(--charcoal); color: #fff9ee; }
+.footer-inner, .site-footer a { color: #fff9ee; }
+.route-title, .route-label { color: var(--blue-dark); }
+@media (max-width: 900px) { .nav-contact { margin-top: 6px; } }
+@media (max-width: 750px) { .hero-photo { box-shadow: 7px 7px 0 var(--ishita-yellow); } .hero-note { max-width: 180px; font-size: .7rem; } .chapter-stamp { font-size: .61rem; } }
+@media (prefers-reduced-motion: reduce) { .featured-project-image, .other-project-card, .fun-fact-toggle { transition: none; } }
