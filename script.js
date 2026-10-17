@@ -203,3 +203,278 @@ document.addEventListener("DOMContentLoaded", function () {
     // html { scroll-behavior: smooth; }
 
 });
+
+/* ==========================================
+   THE ISHITA SCOREBOARD — ANIMATED COUNTERS
+========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const scoreboard = document.querySelector("#scoreboard");
+    const counters = document.querySelectorAll(
+        "#scoreboard .scoreboard-value[data-target]"
+    );
+
+    if (!scoreboard || counters.length === 0) return;
+
+    let hasAnimated = false;
+
+    const animateCounter = (counter) => {
+        const target = Number(counter.dataset.target);
+        const duration = 1200;
+        const startTime = performance.now();
+
+        function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            const eased = 1 - Math.pow(1 - progress, 3);
+            counter.textContent = Math.round(target * eased);
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target;
+            }
+        }
+
+        requestAnimationFrame(updateCounter);
+    };
+
+    if (!("IntersectionObserver" in window)) {
+        counters.forEach(counter => {
+            counter.textContent = counter.dataset.target;
+        });
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasAnimated) {
+                hasAnimated = true;
+
+                if (window.matchMedia(
+                    "(prefers-reduced-motion: reduce)"
+                ).matches) {
+                    counters.forEach(counter => {
+                        counter.textContent = counter.dataset.target;
+                    });
+                } else {
+                    counters.forEach(animateCounter);
+                }
+
+                observer.disconnect();
+            }
+        });
+    }, {
+        threshold: 0.25
+    });
+
+    observer.observe(scoreboard);
+});
+
+/* ==========================================
+   ISHITA FM — VINYL PLAY / PAUSE
+========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const fm = document.querySelector(".ishita-fm");
+    const vinyl = document.getElementById("fmVinyl");
+    const button = document.getElementById("fmPlayButton");
+    const status = document.getElementById("fmStatus");
+
+    if (!fm || !vinyl || !button || !status) return;
+
+    // Respect visitors who prefer reduced motion.
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    let isPlaying = !reducedMotion;
+
+    function updatePlayer() {
+        vinyl.classList.toggle("paused", !isPlaying);
+        fm.classList.toggle("is-paused", !isPlaying);
+
+        button.textContent = isPlaying ? "❚❚" : "▶";
+        button.setAttribute(
+            "aria-label",
+            isPlaying
+                ? "Pause vinyl animation"
+                : "Play vinyl animation"
+        );
+        button.setAttribute("aria-pressed", String(isPlaying));
+
+        status.textContent = isPlaying
+            ? "VINYL SPINNING"
+            : "VINYL PAUSED";
+    }
+
+    button.addEventListener("click", () => {
+        isPlaying = !isPlaying;
+        updatePlayer();
+    });
+
+    updatePlayer();
+});
+
+/* ==========================================
+   THE DETOUR DIARIES — FLIP INTERACTION
+========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const postcards = document.querySelectorAll(".detour-card");
+
+    postcards.forEach((postcard) => {
+        postcard.addEventListener("click", () => {
+            const isFlipped = postcard.classList.toggle("is-flipped");
+
+            postcard.setAttribute(
+                "aria-pressed",
+                String(isFlipped)
+            );
+
+            postcard.setAttribute(
+                "aria-label",
+                isFlipped
+                    ? "Flip postcard back to the front"
+                    : "Flip postcard to read the message"
+            );
+        });
+    });
+});
+
+/* ==========================================
+   SECRET CRICKET — SIX-HIT CHALLENGE
+========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const trigger = document.getElementById("cricketSecretTrigger");
+    const overlay = document.getElementById("cricketGameOverlay");
+    const close = document.getElementById("cricketGameClose");
+    const dialog = overlay?.querySelector(".cricket-game");
+
+    const runsDisplay = document.getElementById("cricketRuns");
+    const ballsDisplay = document.getElementById("cricketBalls");
+    const bestDisplay = document.getElementById("cricketBest");
+    const message = document.getElementById("cricketGameMessage");
+    const ball = document.getElementById("cricketGameBall");
+
+    const swingButton = document.getElementById("cricketSwingButton");
+    const restartButton = document.getElementById("cricketRestartButton");
+
+    if (
+        !trigger || !overlay || !close || !dialog ||
+        !runsDisplay || !ballsDisplay || !bestDisplay ||
+        !message || !ball || !swingButton || !restartButton
+    ) return;
+
+    let runs = 0;
+    let ballsLeft = 3;
+    let best = 0;
+    let previousFocus = null;
+
+    const shots = [
+        { runs: 0, message: "Dot ball! The bowler wins this one." },
+        { runs: 1, message: "Quick single! Every run counts." },
+        { runs: 2, message: "Nice running! That's two." },
+        { runs: 4, message: "FOUR! Straight to the boundary!" },
+        { runs: 6, message: "SIX! OUT OF THE PARK! 🔥" }
+    ];
+
+    function updateStats() {
+        runsDisplay.textContent = runs;
+        ballsDisplay.textContent = ballsLeft;
+        bestDisplay.textContent = best;
+    }
+
+    function resetGame() {
+        runs = 0;
+        ballsLeft = 3;
+        message.textContent = "Ready to face the first ball?";
+        swingButton.disabled = false;
+        swingButton.hidden = false;
+        restartButton.hidden = true;
+        updateStats();
+    }
+
+    function openGame() {
+        previousFocus = document.activeElement;
+        resetGame();
+        overlay.hidden = false;
+        document.body.style.overflow = "hidden";
+        close.focus();
+    }
+
+    function closeGame() {
+        overlay.hidden = true;
+        document.body.style.overflow = "";
+        if (previousFocus instanceof HTMLElement) {
+            previousFocus.focus();
+        }
+    }
+
+    function swing() {
+        if (ballsLeft <= 0) return;
+
+        const shot = shots[Math.floor(Math.random() * shots.length)];
+
+        runs += shot.runs;
+        ballsLeft--;
+
+        if (runs > best) best = runs;
+
+        message.textContent = shot.message;
+        updateStats();
+
+        ball.classList.remove("swinging");
+        void ball.offsetWidth;
+        ball.classList.add("swinging");
+
+        if (ballsLeft === 0) {
+            message.textContent =
+                `INNINGS OVER! You scored ${runs} runs from 3 balls.`;
+
+            swingButton.hidden = true;
+            restartButton.hidden = false;
+        }
+    }
+
+    trigger.addEventListener("click", openGame);
+    close.addEventListener("click", closeGame);
+    swingButton.addEventListener("click", swing);
+    restartButton.addEventListener("click", resetGame);
+
+    overlay.addEventListener("click", (event) => {
+        if (event.target === overlay) closeGame();
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (overlay.hidden) return;
+
+        if (event.key === "Escape") {
+            closeGame();
+            return;
+        }
+
+        if (event.key === "Tab") {
+            const focusable = Array.from(
+                dialog.querySelectorAll(
+                    'button:not([disabled]):not([hidden])'
+                )
+            );
+
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        }
+    });
+
+    updateStats();
+});

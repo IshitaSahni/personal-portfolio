@@ -2781,3 +2781,1493 @@ body { background: var(--background); }
         display: none;
     }
 }
+
+/* ==========================================
+   THE ISHITA SCOREBOARD
+========================================== */
+
+.scoreboard-section {
+    background: #FFF9EE;
+    overflow: hidden;
+}
+
+.scoreboard-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 36px;
+}
+
+.scoreboard-heading h2 {
+    margin-bottom: 14px;
+}
+
+.scoreboard-heading h2 em {
+    color: #E56B37;
+}
+
+.scoreboard-intro {
+    max-width: 500px;
+    color: #5D625E;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.scoreboard-sticker {
+    display: inline-block;
+    flex-shrink: 0;
+    padding: 12px 18px;
+    background: #F5CC49;
+    color: #22292A;
+    border: 2px solid #22292A;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    transform: rotate(3deg);
+}
+
+.scoreboard-panel {
+    background: #173F32;
+    color: #FFFFFF;
+    border: 4px solid #22292A;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 10px 10px 0 #F5CC49;
+}
+
+.scoreboard-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 17px 28px;
+    background: #276C50;
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.scoreboard-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #F5CC49;
+}
+
+.live-dot {
+    width: 9px;
+    height: 9px;
+    background: #F5CC49;
+    border-radius: 50%;
+    animation: scoreboardPulse 1.8s infinite;
+}
+
+@keyframes scoreboardPulse {
+    50% {
+        opacity: 0.35;
+        transform: scale(0.8);
+    }
+}
+
+.scoreboard-player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 36px 30px;
+}
+
+.scoreboard-small-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    color: #F5CC49;
+    font-weight: 800;
+}
+
+.scoreboard-player h3 {
+    margin: 12px 0;
+    color: #FFFFFF;
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(1.7rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+}
+
+.scoreboard-player p {
+    margin: 0;
+    color: #D2E5D8;
+    font-size: 0.9rem;
+}
+
+.scoreboard-jersey {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 110px;
+    height: 110px;
+    background: #E56B37;
+    color: #FFFFFF;
+    border: 3px solid #F5CC49;
+    border-radius: 50%;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    transform: rotate(8deg);
+}
+
+.scoreboard-jersey span {
+    margin-top: 5px;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+}
+
+.scoreboard-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2px;
+    padding: 2px;
+    background: rgba(255,255,255,0.18);
+}
+
+.scoreboard-stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    min-height: 175px;
+    padding: 24px;
+    background: #245943;
+    transition: background 0.25s, transform 0.25s;
+}
+
+.scoreboard-stat:hover {
+    background: #306C52;
+}
+
+.scoreboard-value {
+    display: block;
+    color: #F5CC49;
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(3rem, 5vw, 4.6rem);
+    font-weight: 800;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.scoreboard-stat-label {
+    max-width: 180px;
+    color: #FFFFFF;
+    font-size: 0.7rem;
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+}
+
+.scoreboard-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 22px 28px;
+    color: #F5CC49;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+}
+
+@media (max-width: 800px) {
+    .scoreboard-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .scoreboard-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .scoreboard-player {
+        padding: 26px 20px;
+    }
+
+    .scoreboard-jersey {
+        width: 75px;
+        height: 75px;
+        font-size: 2rem;
+    }
+
+    .scoreboard-stat {
+        min-height: 150px;
+        padding: 18px;
+    }
+
+    .scoreboard-value {
+        font-size: 3rem;
+    }
+
+    .scoreboard-topbar,
+    .scoreboard-footer {
+        padding: 18px;
+    }
+
+    .scoreboard-panel {
+        box-shadow: 5px 5px 0 #F5CC49;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .live-dot {
+        animation: none;
+    }
+}
+
+/* ==========================================
+   ISHITA FM — MUSIC CORNER
+========================================== */
+
+.ishita-fm {
+    margin: 38px 0;
+    background: #FFF9EE;
+    border: 3px solid #22292A;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 7px 7px 0 #E56B37;
+}
+
+.fm-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 13px 22px;
+    background: #E56B37;
+    color: #22292A;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.fm-frequency {
+    font-size: 0.65rem;
+}
+
+.fm-player {
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr);
+    align-items: center;
+    gap: 25px;
+    padding: 28px;
+}
+
+.fm-vinyl-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fm-vinyl {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 155px;
+    height: 155px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background:
+        repeating-radial-gradient(
+            circle,
+            #252525 0,
+            #252525 3px,
+            #393939 4px,
+            #222222 6px
+        );
+    border: 5px solid #22292A;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    animation: fmSpin 4s linear infinite;
+    animation-play-state: running;
+}
+
+.fm-vinyl.paused {
+    animation-play-state: paused;
+}
+
+.fm-vinyl-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    background: #F5CC49;
+    border: 3px solid #E56B37;
+    border-radius: 50%;
+    color: #22292A;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.fm-vinyl-label span {
+    font-size: 1.2rem;
+}
+
+.fm-vinyl-label small {
+    font-size: 0.55rem;
+    letter-spacing: 0.06em;
+}
+
+@keyframes fmSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.fm-content {
+    min-width: 0;
+}
+
+.fm-now-playing {
+    display: inline-block;
+    margin-bottom: 7px;
+    color: #276C50;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.fm-content h3 {
+    margin: 4px 0 12px;
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: 800;
+    line-height: 1.2;
+    color: #22292A;
+}
+
+.fm-content h3 em {
+    color: #E56B37;
+    font-style: italic;
+}
+
+.fm-description {
+    margin: 0 0 18px !important;
+    color: #525B55 !important;
+    font-size: 0.88rem !important;
+    line-height: 1.75 !important;
+}
+
+.fm-track-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+    color: #276C50;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+}
+
+.fm-progress {
+    height: 7px;
+    background: #DDE3D9;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.fm-progress-fill {
+    width: 45%;
+    height: 100%;
+    background: #276C50;
+    border-radius: 20px;
+    animation: fmProgress 8s ease-in-out infinite alternate;
+}
+
+.ishita-fm.is-paused .fm-progress-fill {
+    animation-play-state: paused;
+}
+
+@keyframes fmProgress {
+    from {
+        width: 12%;
+    }
+
+    to {
+        width: 90%;
+    }
+}
+
+.fm-controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.fm-play-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border: 2px solid #22292A;
+    border-radius: 50%;
+    background: #F5CC49;
+    color: #22292A;
+    font-size: 0.95rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.fm-play-button:hover {
+    transform: scale(1.08);
+    background: #E56B37;
+}
+
+#fmStatus,
+.fm-volume {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #276C50;
+}
+
+.fm-volume {
+    margin-left: auto;
+}
+
+.fm-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 13px 22px;
+    background: #276C50;
+    color: #FFF9EE;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+}
+
+@media (max-width: 650px) {
+    .fm-player {
+        grid-template-columns: 1fr;
+        padding: 24px;
+    }
+
+    .fm-vinyl {
+        width: 135px;
+        height: 135px;
+    }
+
+    .fm-vinyl-label {
+        width: 57px;
+        height: 57px;
+    }
+
+    .fm-topbar,
+    .fm-bottom {
+        padding: 12px 16px;
+    }
+
+    .fm-volume {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fm-vinyl,
+    .fm-progress-fill {
+        animation: none;
+    }
+}
+
+/* ==========================================
+   THE DETOUR DIARIES — FLIP POSTCARDS
+========================================== */
+
+.detour-diaries {
+    margin: 55px 0 45px;
+}
+
+.detour-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.detour-eyebrow,
+.detour-instruction {
+    display: block;
+    color: #276C50;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.detour-heading h3 {
+    margin: 8px 0 0;
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: 800;
+    line-height: 1.2;
+    color: #22292A;
+}
+
+.detour-heading h3 em {
+    color: #E56B37;
+}
+
+.detour-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.detour-card {
+    display: block;
+    width: 100%;
+    height: 320px;
+    padding: 0;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    perspective: 1200px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.detour-card-inner {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.detour-card.is-flipped .detour-card-inner {
+    transform: rotateY(180deg);
+}
+
+.detour-face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 22px;
+    border: 3px solid #22292A;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.detour-front {
+    justify-content: space-between;
+}
+
+.detour-road .detour-front {
+    background: #F5CC49;
+}
+
+.detour-sea .detour-front {
+    background: #A8D9D0;
+}
+
+.detour-stamp {
+    position: relative;
+    z-index: 2;
+    align-self: flex-start;
+    padding: 7px 11px;
+    border: 2px solid #22292A;
+    border-radius: 3px;
+    background: #FFF9EE;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.detour-art {
+    position: relative;
+    display: block;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.detour-road-art .detour-sun {
+    position: absolute;
+    top: 12%;
+    right: 17%;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: #E56B37;
+}
+
+.detour-road-line {
+    position: absolute;
+    bottom: 15px;
+    left: -20%;
+    width: 140%;
+    height: 55px;
+    background: #276C50;
+    transform: rotate(-9deg);
+}
+
+.detour-road-line::after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: 10%;
+    width: 80%;
+    border-top: 3px dashed #FFF9EE;
+}
+
+.detour-car {
+    position: absolute;
+    right: 27%;
+    bottom: 35px;
+    font-size: 4.2rem;
+    transform: rotate(-7deg);
+    filter: drop-shadow(4px 5px 0 rgba(34,41,42,0.15));
+}
+
+.detour-sea-art {
+    overflow: hidden;
+}
+
+.detour-sea-sun {
+    position: absolute;
+    top: 12%;
+    right: 18%;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: #E56B37;
+}
+
+.detour-wave {
+    position: absolute;
+    left: -10%;
+    width: 120%;
+    height: 95px;
+    border-radius: 50% 50% 0 0;
+}
+
+.wave-one {
+    bottom: -20px;
+    background: #2657B8;
+}
+
+.wave-two {
+    bottom: -45px;
+    left: -20%;
+    background: #276C50;
+    transform: rotate(-8deg);
+}
+
+.wave-three {
+    bottom: -68px;
+    left: 5%;
+    background: #173F32;
+    transform: rotate(7deg);
+}
+
+.detour-front-bottom {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.detour-card-title {
+    color: #22292A;
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.detour-flip-hint {
+    flex-shrink: 0;
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.detour-back {
+    justify-content: center;
+    gap: 13px;
+    background: #FFF9EE;
+    transform: rotateY(180deg);
+}
+
+.detour-road .detour-back {
+    box-shadow: inset 0 0 0 8px #F5CC49;
+}
+
+.detour-sea .detour-back {
+    box-shadow: inset 0 0 0 8px #A8D9D0;
+}
+
+.detour-back-label {
+    color: #276C50;
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.detour-back-title {
+    color: #22292A;
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(1.2rem, 2.4vw, 1.65rem);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.detour-back-text {
+    color: #4B5650;
+    font-size: 0.85rem;
+    line-height: 1.65;
+}
+
+.detour-signature {
+    color: #E56B37;
+    font-family: "Playfair Display", serif;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.detour-back .detour-flip-hint {
+    align-self: flex-end;
+    color: #276C50;
+}
+
+.detour-card:hover .detour-front {
+    border-color: #E56B37;
+}
+
+.detour-card:focus-visible {
+    outline: 4px solid #2657B8;
+    outline-offset: 5px;
+}
+
+.detour-caption {
+    margin: 22px 0 0 !important;
+    color: #276C50 !important;
+    font-size: 0.65rem !important;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    line-height: 1.7 !important;
+}
+
+@media (max-width: 650px) {
+    .detour-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detour-card {
+        height: 315px;
+    }
+}
+
+@media (max-width: 380px) {
+    .detour-card {
+        height: 350px;
+    }
+
+    .detour-face {
+        padding: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .detour-card-inner {
+        transition: none;
+    }
+}
+
+/* ==========================================
+   ISHITA COLLECTOR'S EDITION
+   Featured Project Interactions
+========================================== */
+
+/* Make each featured project feel like a collectible */
+.featured-project {
+    position: relative;
+    transition: transform 0.35s ease;
+}
+
+/* Lift the project slightly */
+@media (hover: hover) and (pointer: fine) {
+    .featured-project:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* Trading-card-style image frame */
+.featured-project .featured-project-image {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    border: 3px solid #22292A;
+    border-radius: 16px;
+
+    box-shadow: 8px 8px 0 #F5CC49;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+/* Image zoom */
+.featured-project .featured-project-image img {
+    transition: transform 0.45s ease;
+}
+
+/* Collectible hover effect */
+@media (hover: hover) and (pointer: fine) {
+    .featured-project:hover .featured-project-image {
+        transform: rotate(-1.5deg) translateY(-5px);
+        box-shadow: 12px 12px 0 #E56B37;
+        border-color: #276C50;
+    }
+
+    .featured-project:hover .featured-project-image img {
+        transform: scale(1.035);
+    }
+}
+
+/* Category label — top-left corner */
+.featured-project .featured-project-image::before {
+    content: "PROJECT CARD";
+
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+
+    padding: 8px 11px;
+
+    background: #FFF9EE;
+    border: 2px solid #22292A;
+    border-radius: 4px;
+
+    color: #22292A;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+
+    pointer-events: none;
+}
+
+/* Different project identities */
+.featured-project:nth-of-type(1)
+.featured-project-image::before {
+    content: "SPORTS ANALYTICS";
+}
+
+.featured-project:nth-of-type(2)
+.featured-project-image::before {
+    content: "STOCHASTIC SCIENCE";
+}
+
+.featured-project:nth-of-type(3)
+.featured-project-image::before {
+    content: "ASTROPHYSICS";
+}
+
+.featured-project:nth-of-type(4)
+.featured-project-image::before {
+    content: "AI & CONSERVATION";
+}
+
+/* Achievement label — bottom-right */
+.featured-project .featured-project-image::after {
+    content: "✳ LEVEL UNLOCKED";
+
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    z-index: 2;
+
+    padding: 8px 11px;
+
+    background: #276C50;
+    border: 2px solid #F5CC49;
+    border-radius: 4px;
+
+    color: #FFF9EE;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+
+    opacity: 0;
+    transform: translateY(12px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+    pointer-events: none;
+}
+
+/* Reveal achievement on hover */
+@media (hover: hover) and (pointer: fine) {
+    .featured-project:hover .featured-project-image::after {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Give keyboard users the same visual feedback */
+.featured-project:focus-within .featured-project-image {
+    border-color: #276C50;
+    box-shadow: 12px 12px 0 #E56B37;
+}
+
+.featured-project:focus-within .featured-project-image::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Keep the card readable on mobile */
+@media (max-width: 800px) {
+    .featured-project .featured-project-image {
+        box-shadow: 5px 5px 0 #F5CC49;
+    }
+
+    .featured-project .featured-project-image::before {
+        top: 10px;
+        left: 10px;
+        padding: 6px 8px;
+        font-size: 0.55rem;
+    }
+
+    .featured-project .featured-project-image::after {
+        right: 10px;
+        bottom: 10px;
+        padding: 6px 8px;
+        font-size: 0.52rem;
+
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Accessibility — reduce motion if requested */
+@media (prefers-reduced-motion: reduce) {
+    .featured-project,
+    .featured-project .featured-project-image,
+    .featured-project .featured-project-image img,
+    .featured-project .featured-project-image::after {
+        transition: none;
+    }
+}
+
+/* Explicit collectible labels — no dependency on HTML order */
+
+.collector-cricket .featured-project-image::before {
+    content: "SPORTS ANALYTICS";
+}
+
+.collector-music .featured-project-image::before {
+    content: "STOCHASTIC SCIENCE";
+}
+
+.collector-astro .featured-project-image::before {
+    content: "ASTROPHYSICS";
+}
+
+.collector-wildlife .featured-project-image::before {
+    content: "AI & CONSERVATION";
+}
+
+.collector-building .featured-project-image::before {
+    content: "WORK IN PROGRESS";
+}
+
+/* Give the in-progress card a different achievement label */
+.collector-building .featured-project-image::after {
+    content: "✳ NEXT LEVEL LOADING";
+    background: #E56B37;
+}
+
+/* ==========================================
+   SECRET CRICKET MINI-GAME
+========================================== */
+
+.cricket-secret-trigger {
+    position: fixed;
+    left: 18px;
+    bottom: 18px;
+    z-index: 150;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    padding: 0;
+    border: 2px solid #22292A;
+    border-radius: 50%;
+    background: #F5CC49;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #E56B37;
+    transform: rotate(-15deg);
+    transition: transform 0.2s ease;
+}
+
+.cricket-secret-trigger:hover {
+    transform: rotate(0deg) scale(1.12);
+}
+
+.cricket-secret-trigger:focus-visible {
+    outline: 3px solid #2657B8;
+    outline-offset: 4px;
+}
+
+.cricket-game-overlay[hidden],
+.cricket-restart-button[hidden] {
+    display: none !important;
+}
+
+.cricket-game-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    background: rgba(18, 27, 24, 0.78);
+}
+
+.cricket-game {
+    width: min(100%, 510px);
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 4px solid #22292A;
+    border-radius: 16px;
+    background: #173F32;
+    color: #FFFFFF;
+    box-shadow: 10px 10px 0 #E56B37;
+}
+
+.cricket-game-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 20px;
+    background: #276C50;
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    color: #F5CC49;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.cricket-game-close {
+    flex-shrink: 0;
+    border: none;
+    background: transparent;
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.cricket-game-body {
+    padding: 26px;
+    text-align: center;
+}
+
+.cricket-game-eyebrow {
+    margin: 0 0 10px;
+    color: #F5CC49;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.cricket-game h2 {
+    margin: 0 0 12px;
+    color: #FFFFFF;
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 800;
+}
+
+.cricket-game h2 em {
+    color: #F5CC49;
+}
+
+.cricket-game-intro {
+    margin: 0 0 22px;
+    color: #D2E5D8;
+    font-size: 0.88rem;
+}
+
+.cricket-game-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.cricket-game-stats > div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 15px 6px;
+    background: #276C50;
+    border-radius: 6px;
+}
+
+.cricket-game-stats strong {
+    color: #F5CC49;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.cricket-game-stats span {
+    color: #FFFFFF;
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.cricket-game-pitch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 115px;
+    margin: 20px 0;
+    border: 2px dashed #6BA68A;
+    border-radius: 8px;
+    background: repeating-linear-gradient(
+        90deg,
+        #245943 0,
+        #245943 35px,
+        #286248 35px,
+        #286248 70px
+    );
+}
+
+.cricket-game-ball {
+    display: inline-block;
+    font-size: 3.5rem;
+    transform-origin: center bottom;
+}
+
+.cricket-game-ball.swinging {
+    animation: cricketSwing 0.5s ease;
+}
+
+@keyframes cricketSwing {
+    0% { transform: rotate(-35deg) scale(0.85); }
+    55% { transform: rotate(30deg) scale(1.25); }
+    100% { transform: rotate(0) scale(1); }
+}
+
+.cricket-game-message {
+    min-height: 48px;
+    margin: 0 0 12px;
+    color: #F5CC49;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.cricket-swing-button,
+.cricket-restart-button {
+    width: 100%;
+    padding: 14px 20px;
+    border: 2px solid #22292A;
+    border-radius: 7px;
+    background: #F5CC49;
+    color: #22292A;
+    font-size: 0.9rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.cricket-swing-button:hover,
+.cricket-restart-button:hover {
+    background: #E56B37;
+    transform: translateY(-2px);
+}
+
+.cricket-swing-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.cricket-game-footer {
+    margin: 20px 0 0;
+    color: #B5D4C2;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+@media (max-width: 480px) {
+    .cricket-game-body {
+        padding: 20px;
+    }
+
+    .cricket-game {
+        box-shadow: 5px 5px 0 #E56B37;
+    }
+
+    .cricket-secret-trigger {
+        left: 12px;
+        bottom: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cricket-game-ball.swinging {
+        animation: none;
+    }
+}
+
+/* ==========================================
+   MOBILE EXPERIENCE TIMELINE FIX
+========================================== */
+
+@media (max-width: 600px) {
+
+    #experience .timeline-item {
+        padding: 24px 18px;
+    }
+
+    #experience .timeline-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    #experience .timeline-item h3 {
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+
+    #experience .timeline-item p {
+        font-size: 0.92rem;
+        line-height: 1.7;
+        overflow-wrap: break-word;
+    }
+
+    #experience .timeline-date {
+        font-size: 0.7rem;
+    }
+}
+
+
+/* ==========================================
+   THE ISHITA ROUTE — MINI MOBILE VERSION
+   Desktop version remains unchanged
+========================================== */
+
+@media (max-width: 900px) {
+
+    .ishita-route {
+        display: flex !important;
+        position: fixed;
+        top: 50%;
+        right: 2px;
+        left: auto;
+        transform: translateY(-50%);
+        width: 32px;
+        height: 52vh;
+        max-height: 400px;
+        z-index: 90;
+        flex-direction: column;
+        align-items: center;
+        pointer-events: none;
+        opacity: 0.85;
+    }
+
+    .ishita-route .route-title {
+        display: none;
+    }
+
+    .ishita-route .route-label {
+        display: none;
+    }
+
+    .ishita-route .route-track {
+        position: relative;
+        width: 26px;
+        height: auto;
+        flex: 1;
+        min-height: 0;
+    }
+
+    .ishita-route .route-track svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+    }
+
+    .ishita-route .route-scooter {
+        position: absolute;
+        width: 27px;
+        height: 27px;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+
+    .ishita-route .route-scooter img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .ishita-route {
+        right: 1px;
+        width: 25px;
+        height: 42vh;
+        opacity: 0.75;
+    }
+
+    .ishita-route .route-track {
+        width: 21px;
+    }
+
+    .ishita-route .route-scooter {
+        width: 23px;
+        height: 23px;
+    }
+}
+
+
+/* ==========================================
+   EXPERIENCE TIMELINE — FINAL MOBILE FIX
+   Does not affect desktop or Vespa
+========================================== */
+
+@media (max-width: 700px) {
+
+    #experience .experience-timeline {
+        margin-top: 30px;
+        border-top: none;
+    }
+
+    /* Remove the old vertical timeline line */
+    #experience .experience-timeline::before {
+        display: none;
+    }
+
+    /* Stack each experience into a clean card */
+    #experience .experience-item {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: none;
+        gap: 20px;
+
+        width: 100%;
+        min-width: 0;
+
+        padding: 26px 20px;
+        margin-bottom: 20px;
+
+        background: #FFF9EE;
+        border: 1px solid #E8CDBB;
+        border-radius: 12px;
+        box-sizing: border-box;
+    }
+
+    #experience .experience-item:last-child {
+        padding-bottom: 26px;
+        margin-bottom: 0;
+    }
+
+    /* Hide markers from the old layout */
+    #experience .experience-marker {
+        display: none;
+    }
+
+    /* Date and experience number */
+    #experience .experience-meta {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        width: 100%;
+    }
+
+    #experience .experience-date {
+        font-size: 0.68rem;
+        line-height: 1.5;
+        letter-spacing: 0.07em;
+    }
+
+    #experience .experience-number {
+        font-size: 1.8rem;
+        line-height: 1;
+        flex-shrink: 0;
+    }
+
+    /* Experience description */
+    #experience .experience-details {
+        width: 100%;
+        min-width: 0;
+    }
+
+    #experience .experience-details h3 {
+        font-size: 1.55rem;
+        line-height: 1.3;
+        margin: 0 0 12px;
+    }
+
+    #experience .experience-organisation {
+        font-size: 0.95rem;
+        margin-bottom: 18px !important;
+    }
+
+    #experience .experience-details p {
+        font-size: 0.9rem;
+        line-height: 1.75;
+        overflow-wrap: break-word;
+    }
+
+    #experience .experience-tags {
+        gap: 7px;
+        margin-top: 20px;
+    }
+
+    #experience .experience-tags span {
+        font-size: 0.68rem;
+        padding: 6px 9px;
+    }
+}
