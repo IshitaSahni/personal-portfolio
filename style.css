@@ -1686,3 +1686,331 @@ h1 em, h2 em {
   font-family: Georgia, serif;
   font-weight: 400;
 }
+
+.project-visual {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #eef1f3;
+}
+
+.project-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.project-visual:hover .project-image {
+    transform: scale(1.025);
+}
+
+@media (max-width: 768px) {
+    .project-image {
+        max-height: 300px;
+    }
+}
+
+/* AstroQuantum — restore side-by-side project layout */
+
+.astroquantum-project {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 55px;
+    margin: 65px 0;
+}
+
+.astroquantum-project .project-visual {
+    width: 100%;
+    min-width: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #eef1f3;
+}
+
+.astroquantum-project .project-image {
+    display: block;
+    width: 100%;
+    height: 430px;
+    max-height: none;
+    object-fit: contain;
+}
+
+.astroquantum-project .project-content {
+    min-width: 0;
+}
+
+.astroquantum-project .project-content p {
+    line-height: 1.75;
+}
+
+/* Stack vertically on smaller screens */
+
+@media (max-width: 768px) {
+    .astroquantum-project {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        margin: 40px 0;
+    }
+
+    .astroquantum-project .project-image {
+        height: auto;
+        max-height: 350px;
+    }
+}
+
+
+/* ==========================================
+   FEATURED PROJECTS
+   ========================================== */
+
+.projects-intro {
+    max-width: 650px;
+    margin: 18px 0 55px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.featured-project {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 55px;
+    align-items: center;
+    padding: 55px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.featured-project-reverse .featured-project-image {
+    order: 2;
+}
+
+.featured-project-reverse .featured-project-content {
+    order: 1;
+}
+
+.featured-project-image {
+    width: 100%;
+    min-width: 0;
+    height: 390px;
+    background: #edf0f2;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.featured-project-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.project-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--blue-dark);
+    font-weight: 600;
+    text-align: center;
+    padding: 25px;
+}
+
+.project-image-placeholder small {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--muted);
+}
+
+.featured-project-content {
+    min-width: 0;
+}
+
+.featured-project-content h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(26px, 3vw, 36px);
+    line-height: 1.2;
+    margin: 12px 0 22px;
+    color: var(--charcoal);
+}
+
+.featured-project-content > p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.85;
+    margin-bottom: 16px;
+}
+
+.featured-project-content .project-subtitle {
+    color: var(--blue-dark) !important;
+    font-weight: 600;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.project-tags span {
+    padding: 7px 11px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: #edf1f4;
+    color: var(--blue-dark);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.project-links a {
+    color: var(--blue-dark);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--blue-dark);
+    padding-bottom: 4px;
+}
+
+.project-links a:hover {
+    color: var(--charcoal);
+}
+
+.currently-building-heading {
+    margin-top: 85px;
+}
+
+.current-project {
+    border-bottom: none;
+}
+
+@media (max-width: 800px) {
+    .featured-project {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 40px 0;
+    }
+
+    .featured-project-reverse .featured-project-image,
+    .featured-project-reverse .featured-project-content {
+        order: initial;
+    }
+
+    .featured-project-image {
+        height: 290px;
+    }
+
+    .currently-building-heading {
+        margin-top: 55px;
+    }
+}
+
+
+/* OTHER PROJECTS */
+
+.other-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 44px;
+}
+
+.other-project-card {
+    display: flex;
+    flex-direction: column;
+    padding: 34px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.other-project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(41, 45, 50, 0.07);
+}
+
+.other-project-number {
+    color: var(--blue-dark);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    margin-bottom: 18px;
+}
+
+.other-project-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1.35rem, 2vw, 1.7rem);
+    line-height: 1.3;
+    margin-bottom: 16px;
+}
+
+.other-project-card p {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 0.93rem;
+    margin-bottom: 22px;
+}
+
+.other-project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-bottom: 20px;
+}
+
+.other-project-tags span {
+    padding: 6px 10px;
+    background: #e7edf1;
+    color: var(--blue-dark);
+    font-size: 0.72rem;
+    border-radius: 4px;
+}
+
+.other-project-card a {
+    color: var(--blue-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    align-self: flex-start;
+}
+
+.other-project-card a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    .other-projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .other-project-card {
+        padding: 26px;
+    }
+}
+
+/* IPL dashboard screenshot */
+
+.featured-project-screenshot {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+}
