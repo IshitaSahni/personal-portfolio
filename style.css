@@ -2109,3 +2109,162 @@ h1 em, h2 em {
         font-size: 2rem;
     }
 }
+
+
+/* SKILLS SECTION */
+
+.skills-intro {
+    max-width: 680px;
+    margin-top: 20px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 45px;
+}
+
+.skill-category {
+    padding: 30px;
+    background: #f0f2f3;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: transform 0.25s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-3px);
+}
+
+.skill-number {
+    display: block;
+    margin-bottom: 14px;
+    color: var(--blue-dark);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.skill-category h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.35rem;
+    margin-bottom: 22px;
+    line-height: 1.35;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.skill-tags span {
+    padding: 8px 13px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    color: var(--charcoal);
+    font-size: 0.8rem;
+}
+
+/* CERTIFICATIONS */
+
+.certifications-section {
+    margin-top: 100px;
+}
+
+.certifications-section h2 {
+    margin-top: 12px;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.certification-card {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.certification-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.certification-provider {
+    color: var(--blue-dark);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.certification-status {
+    padding: 6px 11px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.certification-status.completed {
+    background: #e0ebe4;
+    color: #42634d;
+}
+
+.certification-status.ongoing {
+    background: #e7edf1;
+    color: var(--blue-dark);
+}
+
+.certification-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.45rem;
+    line-height: 1.35;
+    margin-bottom: 16px;
+}
+
+.certification-card p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.certification-category {
+    align-self: flex-start;
+    margin-top: auto;
+    color: var(--blue-dark);
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+    .skills-grid,
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-category,
+    .certification-card {
+        padding: 25px;
+    }
+
+    .certifications-section {
+        margin-top: 70px;
+    }
+}
