@@ -2268,3 +2268,151 @@ h1 em, h2 em {
         margin-top: 70px;
     }
 }
+
+
+/* CONTACT SECTION */
+
+.contact-section {
+    background: var(--background-alt);
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.contact-intro h2 {
+    margin-bottom: 30px;
+}
+
+.contact-intro p {
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.contact-button {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 27px 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--charcoal);
+    transition: color 0.25s ease;
+}
+
+.contact-link:first-child {
+    border-top: 1px solid var(--border);
+}
+
+.contact-link:hover {
+    color: var(--blue-dark);
+}
+
+.contact-link-info {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-width: 0;
+}
+
+.contact-link-label {
+    color: var(--blue-dark);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.contact-link-value {
+    font-size: 0.95rem;
+    overflow-wrap: anywhere;
+}
+
+.contact-arrow {
+    font-size: 1.4rem;
+    transition: transform 0.25s ease;
+}
+
+.contact-link:hover .contact-arrow {
+    transform: translate(3px, -3px);
+}
+
+/* FOOTER */
+
+.site-footer {
+    background: var(--charcoal);
+    color: #f9f8f5;
+    padding: 38px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-logo {
+    display: inline-block;
+    font-family: "Playfair Display", serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #f9f8f5;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.footer-left p,
+.footer-right p {
+    font-size: 0.8rem;
+    color: #c3cbd1;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.back-to-top {
+    display: inline-block;
+    margin-top: 12px;
+    color: #b3c9d9;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.back-to-top:hover {
+    text-decoration: underline;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-right {
+        text-align: left;
+    }
+}
